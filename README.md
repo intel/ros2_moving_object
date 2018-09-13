@@ -42,8 +42,8 @@ ros2_moving_object package publishes some messages to indicate different status/
   ```bash
   source </ros2/install/dir>/local_setup.bash
   cd </my/overlay_ws/dir>/src
-  git clone https://github.intel.com/otc-rse/ros2_message_filters.git
-  git clone https://github.intel.com/otc-rse/ros2_object_analysis.git
+  git clone https://github.com/intel/ros2_message_filters.git
+  git clone https://github.com/intel/ros2_object_analytics.git
   cd ..
   ament build --symlink-install
   ```
@@ -51,7 +51,7 @@ ros2_moving_object package publishes some messages to indicate different status/
   ```bash
   cd </my/overlay_ws/dir>/src
   source </ros2/dir>/local_setup.bash
-  git clone https://github.intel.com/otc-rse/ros2_moving_object.git
+  git clone https://github.com/intel/ros2_moving_object.git
   cd ..
   ament build --symlink-install
   ```
