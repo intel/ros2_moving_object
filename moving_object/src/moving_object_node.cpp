@@ -50,7 +50,7 @@ int main(int argc, char* argv[])
   ament_index_cpp::get_resource("packages", "moving_object", content, &prefix_path);
 
   // Parse the command line options.
-  auto config = std::string(prefix_path + "/share/moving_object/config/moving_object.yaml");
+  auto config = std::string(prefix_path + "/share/moving_object/param/moving_object.yaml");
   if (rcutils_cli_option_exist(argv, argv + argc, "-c"))
   {
     config = std::string(rcutils_cli_get_option(argv, argv + argc, "-c"));

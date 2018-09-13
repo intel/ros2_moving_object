@@ -132,6 +132,10 @@ install(DIRECTORY include/${PROJECT_NAME}
         DESTINATION include/
 )
 
+install(DIRECTORY param
+        DESTINATION share/${PROJECT_NAME}/
+)
+
 install(TARGETS ${PROJECT_NAME}
   DESTINATION lib/${PROJECT_NAME}
 
