@@ -36,10 +36,11 @@ MovingObjectRos::MovingObjectRos(const std::shared_ptr<Param>& param) : Node("mo
     params_ = param;
   }
 
-  f_detection_sub_ = std::make_unique<FilteredDetection>(this, params_->msg_object_detection_);
-  f_tracking_sub_ = std::make_unique<FilteredTracking>(this, params_->msg_object_tracking_);
+  rclcpp::Node::SharedPtr node = std::shared_ptr<rclcpp::Node>(this);
+  f_detection_sub_ = std::make_unique<FilteredDetection>(node, params_->msg_object_detection_);
+  f_tracking_sub_ = std::make_unique<FilteredTracking>(node, params_->msg_object_tracking_);
   f_localization_sub_ =
-      std::make_unique<FilteredLocalization>(this, params_->msg_object_localization_);
+      std::make_unique<FilteredLocalization>(node, params_->msg_object_localization_);
 
   sync_sub_ =
       std::make_unique<FilteredSync>(*f_detection_sub_, *f_tracking_sub_, *f_localization_sub_, 10);
