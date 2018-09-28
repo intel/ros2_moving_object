@@ -144,6 +144,7 @@ void MovingObjects::processFrame(const object_msgs::msg::ObjectsInBoxes::SharedP
     new_frame->addVector(track->tracked_objects);
     new_frame->addVector(loc->objects_in_boxes);
     new_frame->mergeObjects();
+    frames_.push_back(new_frame);
 
     if (params_->velocity_enabled_)
     {
@@ -152,7 +153,6 @@ void MovingObjects::processFrame(const object_msgs::msg::ObjectsInBoxes::SharedP
     }
   }
 
-  frames_.push_back(new_frame);
   new_frame->publish();
 }
 
