@@ -58,7 +58,7 @@ TEST(UnitTestMovingObjectFrame, isSocialObject)
 
   std::vector<DetectionObjectInBox> Detection_vector;
   Detection_vector.clear();
-  DetectionObjectInBox DetObj_inbox_first = getObjectInBox(50, 50, 100, 100, "person", 0.5f);
+  DetectionObjectInBox DetObj_inbox_first = getObjectInBox(50, 50, 100, 100, "person", 0.8f);
   Detection_vector.push_back(DetObj_inbox_first);
   DetectionObjectInBox DetObj_inbox_second = getObjectInBox(100, 100, 50, 50, "chair", 0.9f);
   Detection_vector.push_back(DetObj_inbox_second);
@@ -83,7 +83,7 @@ TEST(UnitTestMovingObjectFrame, getMovingObjects)
 
   std::vector<DetectionObjectInBox> Detection_vector;
   Detection_vector.clear();
-  DetectionObjectInBox DetObj_inbox_first = getObjectInBox(50, 50, 100, 100, "person", 0.5f);
+  DetectionObjectInBox DetObj_inbox_first = getObjectInBox(50, 50, 100, 100, "person", 0.8f);
   Detection_vector.push_back(DetObj_inbox_first);
   DetectionObjectInBox DetObj_inbox_second = getObjectInBox(100, 100, 50, 50, "chair", 0.9f);
   Detection_vector.push_back(DetObj_inbox_second);
@@ -96,7 +96,7 @@ TEST(UnitTestMovingObjectFrame, getMovingObjects)
   Tracking_vector.clear();
   TrackingObjectInBox TraObj_inbox;
   TraObj_inbox.id = 0;
-  TraObj_inbox.object = getObject("person", 0.5f);
+  TraObj_inbox.object = getObject("person", 0.8f);
   TraObj_inbox.roi = getRoi(50, 50, 100, 100);
   Tracking_vector.push_back(TraObj_inbox);
   EXPECT_EQ(Tracking_vector.size(), static_cast<size_t>(1));
@@ -105,7 +105,7 @@ TEST(UnitTestMovingObjectFrame, getMovingObjects)
   std::vector<LocalizationObjectInBox> Localization_vector;
   Localization_vector.clear();
   LocalizationObjectInBox LocObj_inbox_first;
-  LocObj_inbox_first.object = getObject("person", 0.5f);
+  LocObj_inbox_first.object = getObject("person", 0.8f);
   LocObj_inbox_first.roi = getRoi(50, 50, 100, 100);
   LocObj_inbox_first.min.x = 100;
   LocObj_inbox_first.min.y = 50;
@@ -158,7 +158,7 @@ TEST(UnitTestMovingObjectFrame, findMovingObjectByRoi)
 
   std::vector<DetectionObjectInBox> Detection_vector;
   Detection_vector.clear();
-  DetectionObjectInBox DetObj_inbox_first = getObjectInBox(50, 50, 100, 100, "person", 0.5f);
+  DetectionObjectInBox DetObj_inbox_first = getObjectInBox(50, 50, 100, 100, "person", 0.8f);
   Detection_vector.push_back(DetObj_inbox_first);
   DetectionObjectInBox DetObj_inbox_second = getObjectInBox(100, 100, 50, 50, "chair", 0.9f);
   Detection_vector.push_back(DetObj_inbox_second);
@@ -171,7 +171,7 @@ TEST(UnitTestMovingObjectFrame, findMovingObjectByRoi)
   Tracking_vector.clear();
   TrackingObjectInBox TraObj_inbox;
   TraObj_inbox.id = 0;
-  TraObj_inbox.object = getObject("person", 0.5f);
+  TraObj_inbox.object = getObject("person", 0.8f);
   TraObj_inbox.roi = getRoi(50, 50, 100, 100);
   Tracking_vector.push_back(TraObj_inbox);
   EXPECT_EQ(Tracking_vector.size(), static_cast<size_t>(1));
@@ -180,7 +180,7 @@ TEST(UnitTestMovingObjectFrame, findMovingObjectByRoi)
   std::vector<LocalizationObjectInBox> Localization_vector;
   Localization_vector.clear();
   LocalizationObjectInBox LocObj_inbox_first;
-  LocObj_inbox_first.object = getObject("person", 0.5f);
+  LocObj_inbox_first.object = getObject("person", 0.8f);
   LocObj_inbox_first.roi = getRoi(50, 50, 100, 100);
   LocObj_inbox_first.min.x = 100;
   LocObj_inbox_first.min.y = 50;
@@ -229,7 +229,7 @@ TEST(UnitTestMovingObjectFrame, findMovingObjectById)
 
   std::vector<DetectionObjectInBox> Detection_vector;
   Detection_vector.clear();
-  DetectionObjectInBox DetObj_inbox_first = getObjectInBox(50, 50, 100, 100, "person", 0.5f);
+  DetectionObjectInBox DetObj_inbox_first = getObjectInBox(50, 50, 100, 100, "person", 0.8f);
   Detection_vector.push_back(DetObj_inbox_first);
   DetectionObjectInBox DetObj_inbox_second = getObjectInBox(100, 100, 50, 50, "chair", 0.9f);
   Detection_vector.push_back(DetObj_inbox_second);
@@ -242,7 +242,7 @@ TEST(UnitTestMovingObjectFrame, findMovingObjectById)
   Tracking_vector.clear();
   TrackingObjectInBox TraObj_inbox;
   TraObj_inbox.id = 0;
-  TraObj_inbox.object = getObject("person", 0.5f);
+  TraObj_inbox.object = getObject("person", 0.8f);
   TraObj_inbox.roi = getRoi(50, 50, 100, 100);
   Tracking_vector.push_back(TraObj_inbox);
   EXPECT_EQ(Tracking_vector.size(), static_cast<size_t>(1));
@@ -251,7 +251,7 @@ TEST(UnitTestMovingObjectFrame, findMovingObjectById)
   std::vector<LocalizationObjectInBox> Localization_vector;
   Localization_vector.clear();
   LocalizationObjectInBox LocObj_inbox_first;
-  LocObj_inbox_first.object = getObject("person", 0.5f);
+  LocObj_inbox_first.object = getObject("person", 0.8f);
   LocObj_inbox_first.roi = getRoi(50, 50, 100, 100);
   LocObj_inbox_first.min.x = 100;
   LocObj_inbox_first.min.y = 50;
@@ -300,7 +300,7 @@ TEST(UnitTestMovingObjectFrame, getCentroid)
 
   std::vector<DetectionObjectInBox> Detection_vector;
   Detection_vector.clear();
-  DetectionObjectInBox DetObj_inbox_first = getObjectInBox(50, 50, 100, 100, "person", 0.5f);
+  DetectionObjectInBox DetObj_inbox_first = getObjectInBox(50, 50, 100, 100, "person", 0.8f);
   Detection_vector.push_back(DetObj_inbox_first);
   DetectionObjectInBox DetObj_inbox_second = getObjectInBox(100, 100, 50, 50, "chair", 0.9f);
   Detection_vector.push_back(DetObj_inbox_second);
@@ -313,7 +313,7 @@ TEST(UnitTestMovingObjectFrame, getCentroid)
   Tracking_vector.clear();
   TrackingObjectInBox TraObj_inbox;
   TraObj_inbox.id = 0;
-  TraObj_inbox.object = getObject("person", 0.5f);
+  TraObj_inbox.object = getObject("person", 0.8f);
   TraObj_inbox.roi = getRoi(50, 50, 100, 100);
   Tracking_vector.push_back(TraObj_inbox);
   EXPECT_EQ(Tracking_vector.size(), static_cast<size_t>(1));
@@ -322,7 +322,7 @@ TEST(UnitTestMovingObjectFrame, getCentroid)
   std::vector<LocalizationObjectInBox> Localization_vector;
   Localization_vector.clear();
   LocalizationObjectInBox LocObj_inbox_first;
-  LocObj_inbox_first.object = getObject("person", 0.5f);
+  LocObj_inbox_first.object = getObject("person", 0.8f);
   LocObj_inbox_first.roi = getRoi(50, 50, 100, 100);
   LocObj_inbox_first.min.x = 100;
   LocObj_inbox_first.min.y = 50;
