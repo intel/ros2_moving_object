@@ -28,7 +28,7 @@ velocity_enabled: false
 fixed_frame: /map
 
 #Enable or disable to publish social object messages
-social_msg_enabled: true
+social_filtering_enabled: true
 
 #Enable or disable to publish moving object messages
 moving_object_msg_enabled: true
