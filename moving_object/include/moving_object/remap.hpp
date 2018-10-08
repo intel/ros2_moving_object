@@ -66,7 +66,7 @@ const std::vector<std::string> kObjectFiltering_TypeFiltering_Types = {"person"}
 constexpr int kFrameCache_Size = 30;
 
 /**< Enable or not velocity calculation. */
-constexpr bool kVelocityCalculation_Enabling = false;
+constexpr bool kVelocityCalculation_Enabling = true;
 
 /**< The frame name used for coordination transform during velocity calculation. */
 constexpr char kVelocityCalculation_FixedFrame[] = "/map";
