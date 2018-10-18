@@ -47,18 +47,18 @@ find_package(moving_object_msgs REQUIRED)
 find_package(message_filters REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
-find_package(rviz_yaml_cpp_vendor REQUIRED)
+find_package(yaml_cpp_vendor REQUIRED)
 find_package(class_loader REQUIRED)
 
 include_directories(include
-  ${rviz_yaml_cpp_vendor_DIR}/../../../opt/rviz_yaml_cpp_vendor/include)
+  ${yaml_cpp_vendor_DIR}/../../../opt/yaml_cpp_vendor/include)
 
 link_directories(include
-  ${rviz_yaml_cpp_vendor_DIR}/../../../opt/rviz_yaml_cpp_vendor/lib)
+  ${yaml_cpp_vendor_DIR}/../../../opt/yaml_cpp_vendor/lib)
 
 add_library(rviz-yaml-cpp SHARED IMPORTED)
 set_target_properties(rviz-yaml-cpp PROPERTIES
-  IMPORTED_LOCATION "${rviz_yaml_cpp_vendor_DIR}/../../../opt/rviz_yaml_cpp_vendor/lib/libyaml-cpp.so")
+  IMPORTED_LOCATION "${yaml_cpp_vendor_DIR}/../../../opt/yaml_cpp_vendor/lib/libyaml-cpp.so")
 
 
 add_executable(${PROJECT_NAME}
