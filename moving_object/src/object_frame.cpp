@@ -152,18 +152,29 @@ bool MovingObjectFrame::findMovingObjectByRoi(const ObjectRoi& roi, MovingObject
 
 bool MovingObjectFrame::findTrackingObjectByRoi(const ObjectRoi& roi, TrackingObjectInBox& track)
 {
-  for (auto t : objects_tracked_)
-  {
-#ifdef MO_VERBOSE
-    RCLCPP_INFO(node_->get_logger(),">>>>>Tracking ROI:%8d:%8d:%8d:%8d", roi.x_offset,
-                roi.y_offset, roi.width, roi.height);
-    RCLCPP_INFO(node_->get_logger(),"<<<<<Tracking ROI:%8d:%8d:%8d:%8d", t.roi.x_offset,
-                t.roi.y_offset, t.roi.width, t.roi.height);
-#endif
-    
-    if (roi.x_offset == t.roi.x_offset && roi.y_offset == t.roi.y_offset &&
-        roi.width == t.roi.width && roi.height == t.roi.height)
-    {
+  float x1 = roi.x_offset;
+  float y1 = roi.y_offset;
+  float width1 = roi.width;
+  float height1 = roi.height;
+  for (auto t : objects_tracked_) {
+    float x2 = t.roi.x_offset;
+    float y2 = t.roi.y_offset;
+    float width2 = t.roi.width;
+    float height2 = t.roi.height;
+    float endx = std::max(x1 + width1, x2 + width2);
+    float startx = std::min(x1, x2);
+    float width = width1 + width2 - (endx - startx);
+    float endy = std::max(y1 + height1, y2 + height2);
+    float starty = std::min(y1, y2);
+    float height = height1 + height2 - (endy - starty);
+    float overlap_ratio;
+    if (width <= 0 || height <= 0) {
+      overlap_ratio = 0;
+    } else {
+      overlap_ratio = width * height /
+        (width1 * height1 + width2 * height2 - width * height);
+    }
+    if (overlap_ratio >= 0.3) {
       track = t;
       RCLCPP_INFO(node_->get_logger(), "<<<<<FOUND Tracking ROI:%8d:%8d:%8d:%8d", t.roi.x_offset,
                   t.roi.y_offset, t.roi.width, t.roi.height);
