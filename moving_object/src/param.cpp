@@ -53,6 +53,7 @@ void Param::init()
   social_filtering_enabled_ = kObjectFiltering_TypeFiltering_Enabling;
   moving_object_msg_enabled_ = true; // should be true.
   posibility_threshold_ = kObjectFiltering_PosibilityThreshold;
+  overlap_ratio_threshold_ = kObject_OverlapRatioThreshold;
   max_frames_ = kFrameCache_Size;
   velocity_enabled_ = kVelocityCalculation_Enabling;
   fixed_frame_ = kVelocityCalculation_FixedFrame;
@@ -75,6 +76,7 @@ bool Param::loadParamFromYAML(const std::string& file_path)
   doc["social_filtering_enabled"] >> social_filtering_enabled_;
   doc["moving_object_msg_enabled"] >> moving_object_msg_enabled_;
   doc["posibility_threshold"] >> posibility_threshold_;
+  doc["overlap_ratio_threshold"] >> overlap_ratio_threshold_;
   doc["max_frames"] >> max_frames_;
   doc["velocity_enabled"] >> velocity_enabled_;
   doc["fixed_frame"] >> fixed_frame_;

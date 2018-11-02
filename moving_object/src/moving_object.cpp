@@ -18,13 +18,13 @@
 #include <string>
 #include <rclcpp/rclcpp.hpp>
 #include <geometry_msgs/msg/point_stamped.hpp>
-#include "moving_object/moving_objects.hpp"
+#include "moving_object/moving_object.hpp"
 
 namespace moving_object
 {
 MovingObjects::MovingObjects(const rclcpp::Node::SharedPtr& node,
                              const std::shared_ptr<Param>& param)
-  : params_(param), node_(node)
+  : node_(node), params_(param)
 {
   frames_.clear();
 }

@@ -65,6 +65,8 @@ const std::vector<std::string> kObjectFiltering_TypeFiltering_Types = {"person"}
 /**< The maximum number of frames to be archived in moving object node. */
 constexpr int kFrameCache_Size = 30;
 
+constexpr double kObject_OverlapRatioThreshold = 0.3;
+
 /**< Enable or not velocity calculation. */
 constexpr bool kVelocityCalculation_Enabling = false;
 

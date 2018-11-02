@@ -36,3 +36,5 @@ moving_object_msg_enabled: true
 #The posibility threshold triggerring social_msg and/or moving_object_msg output.
 posibility_threshold: 0.7
 
+#The overlap ratio to determine the same object
+overlap_ratio_threshold: 0.3
