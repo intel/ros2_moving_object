@@ -174,7 +174,7 @@ bool MovingObjectFrame::findTrackingObjectByRoi(const ObjectRoi& roi, TrackingOb
       overlap_ratio = width * height /
         (width1 * height1 + width2 * height2 - width * height);
     }
-    if (overlap_ratio >= 0.3) {
+    if (overlap_ratio >= params_->overlap_ratio_threshold_) {
       track = t;
       RCLCPP_INFO(node_->get_logger(), "<<<<<FOUND Tracking ROI:%8d:%8d:%8d:%8d", t.roi.x_offset,
                   t.roi.y_offset, t.roi.width, t.roi.height);

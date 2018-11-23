@@ -46,6 +46,7 @@ private:
   int max_frames_; /**< The number of frames to be archived in memory. */
   bool velocity_enabled_;
   std::string fixed_frame_;
+  double overlap_ratio_threshold_;
 
   /**< Object Messages, which are initialized from parameter re-configure.*/
   std::string msg_object_detection_;

@@ -23,7 +23,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <message_filters/subscriber.h>
 #include <message_filters/time_synchronizer.h>
-#include "moving_object/moving_objects.hpp"
+#include "moving_object/moving_object.hpp"
 #include "moving_object/param.hpp"
 
 namespace moving_object
