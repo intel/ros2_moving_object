@@ -1,3 +1,12 @@
+DISCONTINUATION OF PROJECT.
+
+This project will no longer be maintained by Intel.
+
+Intel has ceased development and contributions including, but not limited to, maintenance, bug fixes, new releases, or updates, to this project. 
+
+Intel no longer accepts patches to this project.
+
+If you have an ongoing need to use this project, are interested in independently developing it, or would like to maintain patches for the open source software community, please create your own fork of this project. 
 # Vision-Based Moving Object
 
 # Warning: This repo has been merged into our project ros2_object_analytics as a function node to detecte the velocity of the objects
